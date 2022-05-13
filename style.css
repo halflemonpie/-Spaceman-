@@ -13,7 +13,7 @@ main {
     border-style: dashed;
     border-width: 5px;
     display: grid;
-    grid-template-rows: 2fr 8fr 1fr 1fr;
+    grid-template-rows: 2fr 8fr 2fr 1fr 1fr;
     height: 95vh;
     width: 95vw;
 }
