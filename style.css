@@ -1,0 +1,50 @@
+body {
+    background: black;
+    color: antiquewhite;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+main {
+    border: red;
+    border-style: dashed;
+    border-width: 5px;
+    display: grid;
+    grid-template-rows: 2fr 8fr 1fr 1fr;
+    height: 95vh;
+    width: 95vw;
+}
+
+h1 {
+    border: purple;
+    border-style: dashed;
+    border-width: 5px;
+
+}
+
+#spaceman {
+    border: blue;
+    border-style: dashed;
+    border-width: 5px;
+}
+
+#word {
+    border: yellow;
+    border-style: dashed;
+    border-width: 5px;
+}
+
+#bullet {
+    border: aqua;
+    border-style: dashed;
+    border-width: 5px;
+}
+
+#buttons {
+    border: ;
+    border-style: dashed;
+    border-width: 5px;
+}
