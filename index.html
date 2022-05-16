@@ -10,15 +10,34 @@
 <body>
     <main>
         <h1 id="title">Spaceman</h1>
-        <div id="spaceman">Spaceman Div</div>
-        <div id="word">Word display section</div>
-        <div id="bullet">
-            <input id="input-field" type="text">
-            <button id="fire-button" type="submit">Fire!</button>
+        <div id="spaceman">Work On Process<br>Coming Soon</div>
+        <div id="prompt">
+            <button id="hint-button">Hints!</button>
+            <p id="hint1" class="hint" hidden>Hint: The twelve most commonly occurring letters in the English language are e-t-a-o-i-n-s-h-r-d-l-u.</p>
+            <p id="hint2" class="hint" hidden>Hint: Almost every word has at least one of the five vowels (a, e, i, o, u, maybe y).</p>
         </div>
-        <div id="buttons">
-            <button id="start-button">Start!</button>
-            <button id="reset-button">Start Over</button>
+        <div id="word">
+            <button id="start-button">
+                <div>S</div>
+                <div>T</div>
+                <div>A</div>
+                <div>R</div>
+                <div>T</div>
+            </button>
+        </div>
+        <div id="bullet">
+            <div id="remain-letters" class="show-letters"> 
+                <p>Remaining Letters</p>
+                <div id="remain-array"></div>
+            </div>
+            <div id="fire-field">
+                <input id="input-field" type="text">
+                <button id="fire-button" type="submit">Fire!</button>
+            </div>
+            <div id="used-letters" class="show-letters"> 
+                <p>Used Letters</p> 
+                <div id="used-array"></div>
+            </div>
         </div>
     </main>
     <script src="script.js"></script>

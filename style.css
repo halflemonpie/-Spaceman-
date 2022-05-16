@@ -13,7 +13,7 @@ main {
     border-style: dashed;
     border-width: 5px;
     display: grid;
-    grid-template-rows: 2fr 8fr 2fr 1fr 1fr;
+    grid-template-rows: 1fr 8fr 1fr 2fr 2fr;
     height: 95vh;
     width: 95vw;
 }
@@ -22,6 +22,7 @@ h1 {
     border: purple;
     border-style: dashed;
     border-width: 5px;
+    margin: 0;
 
 }
 
@@ -35,16 +36,77 @@ h1 {
     border: yellow;
     border-style: dashed;
     border-width: 5px;
+    display: flex;
+    justify-content: space-around;
 }
+
+#start-button {
+    width: 80%;
+    font-size: 5em;
+    padding: 0px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* #start-button p {
+    color: red;
+    font-size: 100%;
+} */
 
 #bullet {
     border: aqua;
     border-style: dashed;
     border-width: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+/* #remain-letters {
+    max-width: 33%;
+} */
+
+
+#remain-array {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.remain-letter {
+    background-color: green;
+    margin: 1px;
+    border-radius: 20%;
+    height: 1em;
+    width: 1em;
 }
 
-#buttons {
+#used-array {
+    display: flex;
+    flex-wrap: wrap;
+}
+.used-letter {
+    text-decoration: line-through;
+    background-color: red;
+    margin: 1px;
+    border-radius: 20%;
+    height: 1em;
+    width: input.value.length;
+}
+
+
+
+
+#prompt {
     border: ;
     border-style: dashed;
     border-width: 5px;
 }
+
+.letter {
+    /* border: aqua;
+    border-style: dashed;
+    border-width: 5px; */
+    display: flex;
+    align-items: center;
+    text-decoration: underline;
+}
+
