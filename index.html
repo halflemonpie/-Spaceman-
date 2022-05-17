@@ -6,15 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spaceman</title>
     <link rel="stylesheet" href="style.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Permanent+Marker&family=Rubik+Glitch&family=Smokum&display=swap" rel="stylesheet">
 </head>
 <body>
     <main>
-        <h1 id="title">Spaceman</h1>
-        <div id="spaceman">Work On Process<br>Coming Soon</div>
+        <h1 id="title">Spaceman Vs Invader</h1>
+        <div id="spaceman">
+            <div id="start-prompt" hidden>
+                <h4>Background</h4>
+                <p>In 2077, human has became one of the most dominant species in the galaxy.</p>
+                <p>As the last Spaceman of the planet, you are going to fight against human to protect your planet.</p>
+                <br>
+                <h4>How to play</h4>
+                <p>You are going guess the letters of a random word. If you are confident enough, you can also guess the word with the clues that you have. Just put your guess into the input field, then click the fire button or Enter. You only have limited number of guesses before the humans come to you.</p>
+                <br>
+                <p id="hint1" class="hint">Hint1: The twelve most commonly occurring letters in the English language are e-t-a-o-i-n-s-h-r-d-l-u.</p>
+                <p id="hint2" class="hint">Hint2: Almost every word has at least one of the five vowels (a, e, i, o, u, maybe y).</p>
+                <!-- hints are from wikipedia of hangman -->
+            </div>
+            <div id="game-section">
+                <div id="humans">😃😃😃😃😃</div>
+                <div id="heart">❤️</div>
+                <div id="spaceman-char">👽</div>
+            </div>
+        </div>
         <div id="prompt">
-            <button id="hint-button">Hints!</button>
-            <p id="hint1" class="hint" hidden>Hint: The twelve most commonly occurring letters in the English language are e-t-a-o-i-n-s-h-r-d-l-u.</p>
-            <p id="hint2" class="hint" hidden>Hint: Almost every word has at least one of the five vowels (a, e, i, o, u, maybe y).</p>
+            <div id="prompt-text">
+                <p id="prompt-p">Please Click START to start the game</p>
+            </div>
         </div>
         <div id="word">
             <button id="start-button">
@@ -33,6 +55,7 @@
             <div id="fire-field">
                 <input id="input-field" type="text">
                 <button id="fire-button" type="submit">Fire!</button>
+                <button id="reset" hidden>Play Again</button>
             </div>
             <div id="used-letters" class="show-letters"> 
                 <p>Used Letters</p> 

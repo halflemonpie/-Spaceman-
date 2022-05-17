@@ -1,10 +1,11 @@
 body {
-    background: black;
+    background: url('https://cdn.wallpapersafari.com/42/70/gDljmw.jpg');
     color: antiquewhite;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Caveat Brush', cursive;    
 
 }
 
@@ -23,6 +24,9 @@ h1 {
     border-style: dashed;
     border-width: 5px;
     margin: 0;
+    font-size: 5vw;
+    padding: 0;
+    font-family: 'Rubik Glitch', cursive;
 
 }
 
@@ -30,6 +34,7 @@ h1 {
     border: blue;
     border-style: dashed;
     border-width: 5px;
+    font-size: 17px;
 }
 
 #word {
@@ -37,21 +42,22 @@ h1 {
     border-style: dashed;
     border-width: 5px;
     display: flex;
-    justify-content: space-around;
-}
-
-#start-button {
-    width: 80%;
-    font-size: 5em;
-    padding: 0px;
-    display: flex;
     justify-content: space-evenly;
 }
 
-/* #start-button p {
-    color: red;
-    font-size: 100%;
-} */
+#start-button {
+    width: 40%;
+    font-size: 5vw;
+    padding: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 10px;
+    font-family: 'Rubik Glitch', cursive;
+    background: red;
+    color: white;
+}
+
 
 #bullet {
     border: aqua;
@@ -92,8 +98,17 @@ h1 {
     width: input.value.length;
 }
 
+#fire-field {
+    align-self: center;
+}
 
+#fire-button {
+    font-family: 'Rubik Glitch', cursive;
+}
 
+#reset {
+    font-family: 'Rubik Glitch', cursive;
+}
 
 #prompt {
     border: ;
@@ -109,4 +124,44 @@ h1 {
     align-items: center;
     text-decoration: underline;
 }
+
+#humans {
+    position: relative;
+    top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+#heart {
+    position: relative;
+    top: 310px;
+}
+
+.shot-anim {
+    animation: heart-move;
+    animation-duration: 1s;
+    animation-iteration-count: heartAnimCount;
+    animation-timing-function: linear;
+
+    /* animation-fill-mode: forwards; */
+
+
+}
+   
+@keyframes heart-move {
+    100% {
+        /* background: red; */
+        top: 20px;
+    }
+}
+
+
+#spaceman-char {
+    position: relative;
+    top: 310px;
+}
+
 
