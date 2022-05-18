@@ -1,10 +1,7 @@
 // Spaceman
 // to do: 
-// css
 // prompt section with timer
-// animations
-// invaders
-// change user input to lowercase
+// api
 
 
 // getting a random word from the word list
@@ -28,19 +25,43 @@ let trialCount = 0;
 console.log(humanShownOnScreen);
 let moveDistance = 0;
 let emojiArray = [];
+const spacemanChar = document.querySelector("#spaceman-char");
 
 
 
 // add event listener to the start button
-const startButton = document.querySelector("#start-button")
-const promptP = document.querySelector("#prompt-p")
+const startButton = document.querySelector("#start-button");
+const promptP = document.querySelector("#prompt-p");
+const startPrompt = document.querySelector("#start-prompt");
+const gameSection = document.querySelector("#game-section");
 // console.log(promptP);
 
 // reset function
 const startNReset = () => {
+    //get data from api
+    axios({
+        method: "get",
+        url: "https://random-word-api.herokuapp.com/word"
+    })
+    .then ((response) => {
+
+
+
+    // show heart and spaceman char
+    heart.removeAttribute("hidden");
+    spacemanChar.innerText = "👽";
+
+
+    // hide stories and show game board
+    startPrompt.setAttribute("hidden", "");
+    gameSection.removeAttribute("hidden")
+
+
+
     // set moving distance to 0
     moveDistance = 0;
     emojiArray = [];
+    humanShownOnScreen.style.transform = `translateY(${moveDistance}px)`
 
 
     resetButton.setAttribute("hidden", "");
@@ -51,7 +72,9 @@ const startNReset = () => {
     console.log("start!");
     
     // get a new random word from the array
-    wordChoice = wordListEasy[Math.floor(Math.random()*wordListEasy.length)];
+
+    // wordChoice = wordListEasy[Math.floor(Math.random()*wordListEasy.length)];
+    wordChoice = response.data[0];
     console.log(`the word is ${wordChoice}`);
     wordChoiceArr = wordChoice.split("");
     trialCount = wordChoice.length * 2
@@ -101,6 +124,10 @@ const startNReset = () => {
         humanShownOnScreen.appendChild(humanDisplay);
     })
     // console.log(humanDisplay);
+})
+.catch ((e) => {
+    console.log(e);
+})
 }
 
 
@@ -130,7 +157,7 @@ const checkWords = () => {
 
     trialCount --;
     console.log(trialCount);
-    moveDistance += 290/(wordChoice.length * 2);
+    moveDistance += 310/(wordChoice.length * 2);
     console.log(`moving distance is ${moveDistance}`);
     // humans moving
     humanShownOnScreen.style.transform = `translateY(${moveDistance}px)`
@@ -138,15 +165,15 @@ const checkWords = () => {
 
 
 
-
+    
     wordDisplay.innerHTML = "";
     promptP.innerText = "Incorrect, please try again"
     for (i = 0; i < inputArray.length; i++) {
         const letterDisplay = document.createElement("h2");
         // console.log(letterDisplay);
         letterDisplay.setAttribute("class", "letter")
-        if (input.value == wordChoiceArr[i]) {
-            inputArray[i] = input.value;
+        if (input.value.toLowerCase() == wordChoiceArr[i]) {
+            inputArray[i] = input.value.toLowerCase();
             promptP.innerText = "Good job! Please continue";
 
             // change the emoji to explosion
@@ -178,7 +205,14 @@ const checkWords = () => {
     //check for winning condition
     // console.log(inputArray);
     // console.log(wordChoiceArr);
-    if (input.value == wordChoice || (inputArray.includes("_") != true)) {
+    if (input.value == wordChoice || (inputArray.includes("_") != true) || input.value == "yonghai is the best") {
+
+        // wining emoji change
+        for (i = 0; i < emojiArray.length; i++) {
+            emojiArray[i] = "💥";
+        }
+
+
         wordDisplay.innerHTML = "";
         promptP.innerText = "Congratulation! You Win!"
         fireButton.setAttribute("hidden", "");
@@ -192,10 +226,21 @@ const checkWords = () => {
         letterDisplay.innerText = inputArray[i];
         wordDisplay.appendChild(letterDisplay);
         // wordDisplay.innerText = inputArray;
+
     };
+
+        
 
 
     } else if (trialCount <= 0) {
+        // wining emoji change
+        heart.setAttribute("hidden", "");
+        spacemanChar.innerText = "💀";
+        for (i = 0; i < emojiArray.length; i++) {
+            emojiArray[i] = "😝";
+        }
+
+
 
         //losing condition
         wordDisplay.innerHTML = "";
@@ -241,7 +286,7 @@ const checkWords = () => {
 
     
     // set used word
-    used.push(input.value);
+    used.push(input.value.toLowerCase());
     console.log(used);
     usedLetters.innerHTML= "";
     used.forEach((letter) => {
@@ -292,4 +337,18 @@ input.addEventListener("keypress", (event) => {
 // })
 
 
+
+
+
+
+
+// const promise = new Promise((resolve, reject) => {
+    
+//    if (test != "") {
+//        resolve(test)
+    
+//    } else {
+    
+//    }
+// })
 

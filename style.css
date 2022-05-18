@@ -10,9 +10,9 @@ body {
 }
 
 main {
-    border: red;
-    border-style: dashed;
-    border-width: 5px;
+    /* border: white;
+    border-style: solid;
+    border-width: 5px; */
     display: grid;
     grid-template-rows: 1fr 8fr 1fr 2fr 2fr;
     height: 95vh;
@@ -20,9 +20,9 @@ main {
 }
 
 h1 {
-    border: purple;
+    /* border: purple;
     border-style: dashed;
-    border-width: 5px;
+    border-width: 5px; */
     margin: 0;
     font-size: 5vw;
     padding: 0;
@@ -31,18 +31,24 @@ h1 {
 }
 
 #spaceman {
-    border: blue;
+    /* border: blue;
     border-style: dashed;
-    border-width: 5px;
+    border-width: 5px; */
     font-size: 17px;
 }
 
 #word {
-    border: yellow;
+    /* border: yellow;
     border-style: dashed;
-    border-width: 5px;
+    border-width: 5px; */
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
+    color: rgb(229, 59, 59);
+    font-size: 50px;
+    padding: 0;
+    /* background: black; */
+
 }
 
 #start-button {
@@ -60,9 +66,9 @@ h1 {
 
 
 #bullet {
-    border: aqua;
+    /* border: aqua;
     border-style: dashed;
-    border-width: 5px;
+    border-width: 5px; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 
@@ -90,30 +96,47 @@ h1 {
     flex-wrap: wrap;
 }
 .used-letter {
-    text-decoration: line-through;
+    /* text-decoration: line-through; */
     background-color: red;
     margin: 1px;
     border-radius: 20%;
     height: 1em;
+    min-width: 1em;
     width: input.value.length;
 }
 
 #fire-field {
     align-self: center;
+    
 }
 
 #fire-button {
     font-family: 'Rubik Glitch', cursive;
+    background: red;
+    color: white;
 }
 
 #reset {
     font-family: 'Rubik Glitch', cursive;
+    background: red;
+    color: white;
 }
 
 #prompt {
-    border: ;
+    /* border: ;
     border-style: dashed;
-    border-width: 5px;
+    border-width: 5px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#prompt-p {
+    background: rgb(193, 69, 69);
+    font-size: 3vw;
+    margin: 0 auto;
+    color: aliceblue;
 }
 
 .letter {
@@ -123,13 +146,16 @@ h1 {
     display: flex;
     align-items: center;
     text-decoration: underline;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 #humans {
     position: relative;
-    top: 20px;
+    top: 0;
     display: flex;
     justify-content: center;
+    font-size: 2em;
 }
 
 
@@ -137,7 +163,8 @@ h1 {
 
 #heart {
     position: relative;
-    top: 310px;
+    top: 260px;
+    font-size: 2em;
 }
 
 .shot-anim {
@@ -161,7 +188,19 @@ h1 {
 
 #spaceman-char {
     position: relative;
-    top: 310px;
+    top: 250px;
+    font-size: 2em;
 }
 
+p {
+    margin: 0 auto;
+}
 
+h4 {
+    margin: 0 auto;
+}
+
+#start-prompt {
+    font-size: 25px;
+    color: aliceblue;
+}
