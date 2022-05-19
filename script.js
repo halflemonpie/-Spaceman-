@@ -232,6 +232,9 @@ resetButton.addEventListener("click", () => {
 
 // function for fire button and enter
 const checkWords = () => {
+    if (input.value != "") {
+    
+
   //empty the emoji display
   humanShownOnScreen.innerHTML = "";
 
@@ -357,7 +360,7 @@ const checkWords = () => {
 
   // empty input field
   input.value = "";
-
+    }
 };
 
 fireButton.addEventListener("click", () => {
