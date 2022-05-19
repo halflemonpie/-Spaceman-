@@ -3,7 +3,7 @@
 
 This is a special version of the spaceman (aka hangman) game, which is a word guessing game. If the player can't guess the letters of in certain number of guesses, the player loses.
 
-![Screen Shot 2022-05-19 at 2.30.00 PM](/Users/dylan/Desktop/Screen Shot 2022-05-19 at 2.30.00 PM.png)
+![Screen Shot 2022-05-19 at 2.30.00 PM](/Users/dylan/sei/week3/projects/-Spaceman-/Screen Shot 2022-05-19 at 2.30.00 PM.png)
 
 ## Background Story
 
@@ -17,7 +17,7 @@ You are going guess the letters of a random word. If you are confident enough, y
 
 ## Basic Design
 
-![image_55415491](/Users/dylan/Downloads/image_55415491.JPG)
+![image_55415491](/Users/dylan/sei/week3/projects/-Spaceman-/image_55415491.JPG)
 
 
 
