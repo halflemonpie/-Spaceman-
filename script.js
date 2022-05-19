@@ -1,42 +1,43 @@
 // Spaceman
 // to do: 
 // prompt section with timer
-// api
+// grammar check
 
 
 // getting a random word from the word list
+// use the array below if the API is not working
 const wordListEasy = ["apple", "banana", "orange", "blue", "green", "pineapple", "spaceman"];
-const wordDisplay = document.querySelector("#word");
+
+// set up variable that I need to change
+// variable behind the sense
 let wordChoice = "";
 let wordChoiceArr;
 let inputArray = [];
 let remain = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-const remainLetters = document.querySelector("#remain-array")
 let used = [];
-const usedLetters = document.querySelector("#used-array")
-const resetButton = document.querySelector("#reset")
-const mainDisplay = document.querySelector("#spaceman")
-// console.log(mainDisplay.offsetWidth);
-const heart = document.querySelector("#heart");
-let heartAnimCount = 0;
 const humanArray = ["😀","😁","😆","😅","😂","🤣","🥲","😊","😇","🙂","🙃","😉","😌","😍","🥰","😘","😗","😋","😛","🤪","😎","🤩","🥺","🤯","🥵","😡","😱","🥶","😰","🤡"]
-const humanShownOnScreen = document.querySelector("#humans");
-let trialCount = 0;
-console.log(humanShownOnScreen);
-let moveDistance = 0;
 let emojiArray = [];
-const spacemanChar = document.querySelector("#spaceman-char");
+let heartAnimCount = 0;
+let moveDistance = 0;
+let trialCount = 0;
+let humanEnemy;
 
 
-
-// add event listener to the start button
-const startButton = document.querySelector("#start-button");
-const promptP = document.querySelector("#prompt-p");
+// DOM
+const mainDisplay = document.querySelector("#spaceman")
 const startPrompt = document.querySelector("#start-prompt");
+const humanShownOnScreen = document.querySelector("#humans");
+const spacemanChar = document.querySelector("#spaceman-char");
+const heart = document.querySelector("#heart");
+const promptP = document.querySelector("#prompt-p");
+const wordDisplay = document.querySelector("#word");
+const startButton = document.querySelector("#start-button");
+const resetButton = document.querySelector("#reset");
+const remainLetters = document.querySelector("#remain-array")
+const usedLetters = document.querySelector("#used-array");
 const gameSection = document.querySelector("#game-section");
-// console.log(promptP);
 
-// reset function
+// reset function for start button and reset button
 const startNReset = () => {
     //get data from api
     axios({
@@ -51,79 +52,79 @@ const startNReset = () => {
     heart.removeAttribute("hidden");
     spacemanChar.innerText = "👽";
 
-
     // hide stories and show game board
     startPrompt.setAttribute("hidden", "");
     gameSection.removeAttribute("hidden")
 
-
-
-    // set moving distance to 0
+    // set moving distance to initial, empty the emoji array
     moveDistance = 0;
-    emojiArray = [];
     humanShownOnScreen.style.transform = `translateY(${moveDistance}px)`
+    emojiArray = [];
 
-
+    // hide the rest and start button, show the input field and the fire button, change the prompt
     resetButton.setAttribute("hidden", "");
+    startButton.setAttribute("hidden", "");
     input.removeAttribute("hidden");
     fireButton.removeAttribute("hidden");
     promptP.innerText = "Guess the letter or the word:";
-    startButton.setAttribute("hidden", "");
-    console.log("start!");
     
-    // get a new random word from the array
-
+    // get a new random word from the array only use if API is not working
     // wordChoice = wordListEasy[Math.floor(Math.random()*wordListEasy.length)];
+
+    // set the random word and split it into an array, set the trial count
     wordChoice = response.data[0];
-    console.log(`the word is ${wordChoice}`);
     wordChoiceArr = wordChoice.split("");
     trialCount = wordChoice.length * 2
-    console.log(trialCount);
+    console.log(`the word is ${wordChoice}`);
 
-    // reset
+    // reset the array of the humans and empty them on the screen first
     humanEnemy = [];
     humanShownOnScreen.innerHTML = "";
+
+    // reset the input array and the word word display section
     inputArray = [];
     wordDisplay.innerHTML = "";
+
+    // perform actions base on the 
     wordChoiceArr.forEach(() => {
+
+        // 1. push space filler to the input array
+        // 2. create h2 element and set the inner text to filler
+        // 3. append the element to the word display section
         inputArray.push("_")
         const letterDisplay = document.createElement("h2");
         letterDisplay.setAttribute("class", "letter");
         letterDisplay.innerText = "_";
         wordDisplay.appendChild(letterDisplay);
 
-        // create humans
+        // create random emoji humans
         emojiArray.push(humanArray[Math.floor(Math.random() * humanArray.length)])
-        console.log(emojiArray);
-        
-        
-        
     });
-    // console.log(inputArray);
     
     // reset the letter arrays
     // remain letters
     remain = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
     remain.forEach((letter) => {
-        // console.log(letter);
+
+        // create the remain letter section
         const remainLetterDisplay = document.createElement("div");
         remainLetterDisplay.setAttribute("class", "remain-letter");
         remainLetterDisplay.innerText = letter;
         remainLetters.appendChild(remainLetterDisplay);
-    })
+    });
     
     // used letters
     used = [];
     usedLetters.innerHTML = "";
 
-    // emoji display
+    // emoji display for each item in the emoji array
     emojiArray.forEach((element) => {
         const humanDisplay = document.createElement("div");
         humanDisplay.setAttribute("class", "human-display");
         humanDisplay.innerText = element;
         humanShownOnScreen.appendChild(humanDisplay);
     })
-    // console.log(humanDisplay);
+   
 })
 .catch ((e) => {
     console.log(e);
