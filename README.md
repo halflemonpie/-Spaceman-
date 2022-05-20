@@ -9,7 +9,7 @@ This is a special version of the spaceman (aka hangman) game, which is a word gu
 ## Background Story
 
 In 2077, human has became one of the most dominant species in the galaxy.
-As the last alien of the planet, you are going to fight against human (with love) to protect your planet.
+As the last alien of your planet, you are going to fight against human (with love) to protect your planet.
 
 ## How to Play
 You are going guess the letters of a random word. If you are confident enough, you can also guess the entire word with the clues that you have. Just put your guess into the input field, then click the fire button or Enter. You only have limited number of guesses before the humans come to you. Click "Play Again" to restart the game after you finish.
