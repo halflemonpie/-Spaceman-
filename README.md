@@ -1,7 +1,7 @@
 # Spaceman Invader
 ## About This Game
 
-This is a special version of the spaceman (aka hangman) game, which is a word guessing game. If the player can't guess the letters of in certain number of guesses, the player loses.
+This is a special version of the spaceman (aka hangman) game, which is a word guessing game. If the player can't guess the letters of the word in certain number of guesses, the player loses.
 <img width="1440" alt="Screen Shot 2022-05-19 at 2 30 00 PM" src="https://user-images.githubusercontent.com/104039077/169392831-2e14d356-ab61-4bac-90bf-ccaa04082ef8.png">
 
 
@@ -9,7 +9,7 @@ This is a special version of the spaceman (aka hangman) game, which is a word gu
 ## Background Story
 
 In 2077, human has became one of the most dominant species in the galaxy.
-As the last alien of the planet, you are going to fight against human (with love) to protect your planet.
+As the last alien of your planet, you are going to fight against human (with love) to protect your planet.
 
 ## How to Play
 You are going guess the letters of a random word. If you are confident enough, you can also guess the entire word with the clues that you have. Just put your guess into the input field, then click the fire button or Enter. You only have limited number of guesses before the humans come to you. Click "Play Again" to restart the game after you finish.
