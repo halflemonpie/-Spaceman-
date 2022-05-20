@@ -138,7 +138,9 @@ const startNReset = () => {
       wordChoice = response.data[0];
       wordChoiceArr = wordChoice.split("");
       trialCount = wordChoice.length * 2;
-      console.log(`the word is ${wordChoice}`);
+      
+      // the word is shown here
+      // console.log(`the word is ${wordChoice}`);
 
       // reset the array of the humans and empty them on the screen first
       humanEnemy = [];
